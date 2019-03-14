@@ -32,7 +32,7 @@ HIPO_DIR=$CACHEPATH$COATJAVA"/00"$1
 HIPO_FILES=$HIPO_DIR"/*.hipo"
 # ===========================================================================================
 # Loop over files in '$HIPO_FILES' and save the filenames to a txt file
-RUNLIST_FILE=$CLARA_HOME"runlist_"$1".txt"
+RUNLIST_FILE=$CLARA_HOME"/runlist_"$1".txt"
 echo "Now creating file: "$RUNLIST_FILE
 
 for filename in $HIPO_FILES; do
@@ -49,15 +49,15 @@ if ! [ -d $OUT_DIR ]
 fi
 # ===========================================================================================
 # Creating cls file with instructions for CLARA
-CLS_FILE=$CLARA_HOME"bandrun_"$1".cls"
+CLS_FILE=$CLARA_HOME"/bandrun_"$1".cls"
 rm $CLS_FILE
 echo "Now creating file: "$CLS_FILE
-echo "set servicesFile "$CLARA_HOME"trackingandband_filtered.yaml" >> $CLS_FILE
-echo "set fileList "$CLARA_HOME"runlist_"$1".txt" >> $CLS_FILE
+echo "set servicesFile "$CLARA_HOME"/trackingandband_filtered.yaml" >> $CLS_FILE
+echo "set fileList "$CLARA_HOME"/runlist_"$1".txt" >> $CLS_FILE
 echo "set inputDir "$HIPO_DIR >> $CLS_FILE
 echo "set outputDir "$OUT_DIR >> $CLS_FILE
 echo "set outputFilePrefix out_" >> $CLS_FILE
-echo "set logDir "$CLARA_HOME"log" >> $CLS_FILE
+echo "set logDir "$CLARA_HOME"/log" >> $CLS_FILE
 echo "set session "$USER"BAND" >> $CLS_FILE
 echo "set description Reco"$1 >> $CLS_FILE
 echo "set farm.cpu 16" >> $CLS_FILE
