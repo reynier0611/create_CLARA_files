@@ -22,7 +22,7 @@ if [ $# -ne 1 ]
 then
 	echo "Wrong number of arguments provided."
 	echo "Please, run this script the following way:"
-	echo "./combine_files.sh path/to/input/list path/to/output/file"
+	echo "./create_CLARA_files.sh run_number"
 	echo "Bailing out!"
 	exit 1
 fi
